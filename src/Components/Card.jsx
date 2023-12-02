@@ -17,8 +17,8 @@ function Card({item}) {
                     <h5 class="card-title m-0">{item.title}</h5>
                     <p class="card-text m-0">{item.price}</p>
                     <div className='buttons d-flex'>
-                        <a href="#" class="btn btn-primary me-1" onClick={() => {addToCart(item)}}><i class="fa-solid fa-cart-shopping"></i></a>
-                        <a href="#" class="btn btn-primary"><i class="fa-solid fa-heart"></i></a>
+                        <button class="btn btn-primary me-1" onClick={() => {addToCart(item)}}><i class="fa-solid fa-cart-shopping"></i></button>
+                        <button  class="btn btn-primary"><i class="fa-solid fa-heart"></i></button>
                     </div>
                 </div>
             </div>

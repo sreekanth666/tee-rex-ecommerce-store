@@ -5,6 +5,7 @@ import { CartContext } from '../Context/Context'
 
 function Home() {
     const {cart, setCart} = useContext(CartContext)
+    const {wishlist, setWishlist} = useContext(CartContext)
     const [allProducts, setAllProducts] = useState([])
     const fetchProducts = async() => {
         const result = await getTShirtAPI()
@@ -15,8 +16,8 @@ function Home() {
     }, [])
     return (
         <div className='container pb-3'>
-            <div className="container-fluid" style={{height:'90dvh',overflow:"hidden"}}>
-                <img src="https://images.bewakoof.com/uploads/grid/app/NEW-1x1-GPOS-Common-70-1701353544.jpg" alt="" className='img-fluid' />
+<div className="container-fluid d-flex algn-items-center justify-content-center" style={{maxHeight:'90dvh'}}>
+    <img src="https://images.bewakoof.com/uploads/grid/app/720x420-Midsize-bannner-Combos-1699277122.jpg" alt="" className='img-fluid' />
             </div>
 
             {/* Sale cards */}

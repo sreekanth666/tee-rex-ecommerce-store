@@ -3,11 +3,36 @@ import { CartContext } from '../Context/Context'
 
 function Card({item}) {
     const {cart, setCart} = useContext(CartContext)
-    const addToCart = (product) =>{
-        const updatedCart = [...cart];
-        updatedCart.push(product);
-        setCart(updatedCart);
-    }
+    const {wishlist, setWishlist} = useContext(CartContext)
+
+    const isProductInCart = (productId) => {
+        return cart.some((product) => product.id === productId);
+    };
+    const addToCart = (product) => {
+        if (!isProductInCart(product.id)) {
+            const updatedCart = [...cart];
+            updatedCart.push(product);
+            setCart(updatedCart);
+            alert("Product added to cart")
+
+        } else {
+            alert('Product already in the cart!');
+        }
+    };
+
+    const isProductInWishlist = (productId) => {
+        return wishlist.some((product) => product.id === productId);
+    };
+    const addToWishlist = (product) => {
+        if (!isProductInWishlist(product.id)) {
+            const updatedWishlist = [...wishlist];
+            updatedWishlist.push(product);
+            setWishlist(updatedWishlist);
+            alert("Product added to wishlist")
+        } else {
+            alert('Product already in the cart!');
+        }
+    };
     console.log(cart);
     return (
         <div>
@@ -18,7 +43,7 @@ function Card({item}) {
                     <p class="card-text m-0">{item.price}</p>
                     <div className='buttons d-flex'>
                         <button class="btn btn-primary me-1" onClick={() => {addToCart(item)}}><i class="fa-solid fa-cart-shopping"></i></button>
-                        <button  class="btn btn-primary"><i class="fa-solid fa-heart"></i></button>
+                        <button  class="btn btn-primary" onClick={() => {addToWishlist(item)}}><i class="fa-solid fa-heart"></i></button>
                     </div>
                 </div>
             </div>

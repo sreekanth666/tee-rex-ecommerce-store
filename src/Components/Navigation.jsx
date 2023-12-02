@@ -4,8 +4,8 @@ import { CartContext } from '../Context/Context'
 import { Link } from 'react-router-dom'
 
 function Navigation() {
-    const {cart, setCart} = useContext(CartContext)
-    const {wishlist, setWishlist} = useContext(CartContext)
+    const {cart} = useContext(CartContext)
+    const {wishlist} = useContext(CartContext)
     return (
         <div>
             <Navbar expand="lg" className="" style={{backgroundColor:"#f5f5f5"}}>

@@ -4,8 +4,6 @@ import { getTShirtAPI } from '../Services/allAPI'
 import { CartContext } from '../Context/Context'
 
 function Home() {
-    const {cart, setCart} = useContext(CartContext)
-    const {wishlist, setWishlist} = useContext(CartContext)
     const [allProducts, setAllProducts] = useState([])
     const fetchProducts = async() => {
         const result = await getTShirtAPI()

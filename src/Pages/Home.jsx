@@ -1,7 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Card from '../Components/Card'
 import { getTShirtAPI } from '../Services/allAPI'
-import { CartContext } from '../Context/Context'
 
 function Home() {
     const [allProducts, setAllProducts] = useState([])
